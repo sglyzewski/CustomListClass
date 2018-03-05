@@ -22,7 +22,6 @@ namespace CustomListClassProject
             CustomList<int> customList3 = (customList1 + customList2);
             customList1.PrintArray();
             customList2.PrintArray();
-
             customList3.PrintArray();
             Console.ReadLine();
         }

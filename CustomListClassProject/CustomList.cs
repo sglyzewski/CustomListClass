@@ -71,12 +71,18 @@ namespace CustomListClassProject
            
            }
 
-
-    
-
         public T this[int i]
         {
-            get { return array[i]; }
+            get {
+                if (i > count)
+                {
+                    throw new Exception("The index has no value");
+                }
+                else
+                {
+                    return array[i];
+                }
+            }
             set { array[i] = value; }
         }
 
@@ -85,22 +91,17 @@ namespace CustomListClassProject
             ExpandCapacity();
             array[count] = element;
             count++;
-        }
-
-        public void Remove (T element)
-        {
             
         }
 
+        public bool Remove (T element)
+        {
+            return false; 
+        }
+
         
-
        
-
-       
-
-       
-
-        public int Count
+       public int Count
         {
             get
             {
@@ -108,41 +109,14 @@ namespace CustomListClassProject
             }
         }
 
-        //indexer
-        //public T this[int elementIndex]
-        //{
-        //    get
-        //    {
-        //        return
-        //    }
-        //}
 
-        //public int GetLength (T[]array)
-        //{
-        //    int length = 0;
-        //    for (int i = 0, i< )
-        //}
-
-        //public int Length
-        //{
-        //    get
-        //    {
-        //        if (array == null)
-        //            throw new ArgumentNullException("array");
-
-        //    }
-        //}
-
-        
 
 
 
         public static CustomList<T> operator + (CustomList<T> list1, CustomList<T> list2)
         {
             CustomList<T> newList = new CustomList<T>();
-            //newList.capacity = list1.capacity + list2.capacity;
-            //newList.count = list1.count + list2.count;
-            
+      
             for(int i = 0; i<list1.count; i++)
             {
                 newList.Add(list1[i]);
@@ -155,21 +129,5 @@ namespace CustomListClassProject
             return newList;
         }
 
-
-        // number of elements actually in array
-        //public int Count
-        //{
-        //    get
-        //    {
-        //        return count;
-        //    }
-        //}
-
-        //number of elements the list can store before resizing is required
-        //    public int Capacity
-        //    {
-        //        get;
-        //        set;
-        //    }
     }
 }

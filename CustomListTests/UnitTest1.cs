@@ -109,25 +109,26 @@ namespace CustomListTests
 
 
         //Remove Method Tests
+        //[TestMethod]
+        //public void Remove_SecondIntegerElementInList_DeletesSecondIntegerElementFromList()
+        //{
+        //    //arrange
+        //    CustomList<int> customList = new CustomList<int>();
+        //    customList.Add(1);
+        //    customList.Add(2);
+        //    int expected = 0;
+        //    //act
+        //    customList.Remove(2);
+
+        //    int result = customList[1];
+        //    //assert
+        //    result.ThrowsException("The index has no value");
+        //}
+
         [TestMethod]
-        public void Remove_SecondIntegerElementInList_DeletesSecondIntegerElementFromList()
+        public void Remove_FourthStringInList_CountDecrementsFrom4To3()
         {
             //arrange
-            CustomList<int> customList = new CustomList<int>();
-            customList.Add(1);
-            customList.Add(2);
-            int expected = 0;
-            //act
-            customList.Remove(2);
-
-            int result = customList[1];
-            //assert
-            Assert.AreEqual(expected, result);
-        }
-
-        [TestMethod]
-        public void Remove_FourthStringInList_DeletesFourthStringInList()
-        {
             CustomList<string> customList = new CustomList<string>();
             customList.Add("hello");
             customList.Add("world");
@@ -142,6 +143,35 @@ namespace CustomListTests
             Assert.AreEqual(expected, result);
 
         }
+        [TestMethod]
+        public void Remove_ElementWithElementAfter_FollowingElementReplacesIndex()
+        {
+            //arrange
+            CustomList<string> customList = new CustomList<string>();
+            customList.Add("hello");
+            customList.Add("world");
+            customList.Add("hi");
+            string expected = "hi";
+            //act
+            customList.Remove("world");
+            string result = customList[1];
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
+        public void Remove_RemovingNonExistentElement_ReturnsFalse()
+        {
+            //arrange
+            CustomList<string> customList = new CustomList<string>();
+            customList.Add("hello");
+            customList.Add("hi");
+            //act
+            bool result = customList.Remove("world");
+            //assert
+            Assert.IsFalse(result);
+        }
+
+
 
 
 
