@@ -160,6 +160,35 @@ namespace CustomListTests
         }
 
         [TestMethod]
+        public void Count_2ElementList_Return2()
+        {
+            //arrange
+            CustomList<string> customList = new CustomList<string>();
+            customList.Add("hello");
+            customList.Add("hi");
+            int expected = 2;
+
+            //act
+            int result = customList.Count;
+
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Count_EmptyCustomList_CountIsZero()
+        {
+            //arrange
+            CustomList<string> customList = new CustomList<string>();
+            int expected = 0;
+            //act
+
+            int result = customList.Count;
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
         public void Remove_RemovingNonExistentElement_ReturnsFalse()
         {
             //arrange
@@ -188,7 +217,76 @@ namespace CustomListTests
            Assert.AreEqual(expected,result);
         }
 
+        [TestMethod]
+        public void PlusOperatorOverLoad_AddTwoCustomListsWithCountOf1_Index1ContainsSecondListElement()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            customList1.Add(1);
+            customList2.Add(2);
+            CustomList<int> customList3;
+            int expected = 2;
+            //act
+            customList3 = customList1 + customList2;
+            int result = customList3[1];
+            //assert
+            Assert.AreEqual(expected, result);
+        }
 
+        [TestMethod]
+        public void PlusOperatorOverLoad_AddTwoCustomListsWithCountOf1_CountOfSummedListIs2()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            customList1.Add(1);
+            customList2.Add(2);
+            CustomList<int> customList3;
+            int expected = 2;
+            //act
+            customList3 = customList1 + customList2;
+            int result = customList3.Count;
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void PlusOperatorOverLoad_AddThreeCustomListsWithCountOf1_CountOfSummedListIs3()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            CustomList<int> customList3 = new CustomList<int>();
+            CustomList<int> customList4;
+            customList1.Add(1);
+            customList2.Add(2);
+            customList3.Add(3);
+            int expected = 3;
+            //act
+            customList4 = customList1 + customList2 + customList3;
+            int result = customList4.Count;
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void PlusOperatorOverLoad_AddEmptyCustomList_CountRemainsTheSame()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            CustomList<int> customList3;
+            customList1.Add(1);
+
+            //act
+            customList3 = customList1 + customList2;
+            //assert
+            Assert.AreEqual(customList3.Count, customList1.Count);
+        }
+
+
+       
 
 
 
