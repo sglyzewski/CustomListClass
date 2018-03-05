@@ -94,11 +94,93 @@ namespace CustomListClassProject
             
         }
 
-        public bool Remove (T element)
+        public bool CheckForElementInList(T element)
         {
-            return false; 
+            int elementCount = 0;
+            
+            for (int i = 0; i < count; i++)
+            {
+            if (EqualityComparer<T>.Default.Equals(array[i], element))
+                {
+                    elementCount++;
+                }
+            }
+
+            if (elementCount > 0)
+            {
+                return true;
+            }
+
+            else 
+            {
+                return false;
+            }
+
         }
 
+
+        //public int IndexOf(T element)
+        //{
+        //    int elementIndex;
+
+        //    CustomList<int> elementLocation = new CustomList<int>();
+        //    get {
+        //        if (CheckForElementInList(element) == true) {
+        //            for (int i = 0; i < count; i++)
+        //            {
+        //                if (EqualityComparer<T>.Default.Equals(array[i], element))
+        //                {
+        //                    elementLocation.Add(i);
+        //                }
+
+        //            }
+        //            elementIndex = elementLocation[0];
+        //            return elementIndex;
+        //        }
+        //        else
+        //        {
+        //            throw new Exception("The value is not in the list");
+        //        }
+        //    }
+
+        //}
+        public bool Remove (T element)
+        {
+            int elementIndex;
+
+            if (CheckForElementInList(element) == true)
+            {
+                CustomList<int> elementLocation = new CustomList<int>();
+                for (int i = 0; i < count; i++)
+                {
+                    if (EqualityComparer<T>.Default.Equals(array[i], element))
+                    {
+                        elementLocation.Add(i);
+                    }
+
+                }
+                elementIndex = elementLocation[0];
+              
+                MoveElementsLeftInArray(elementIndex);
+                count--;
+                return true;
+            }
+             
+            else
+            {
+
+                return false;
+            }
+        }
+
+        public void MoveElementsLeftInArray (int elementIndex)
+        {
+
+            for (int i = elementIndex; i < count; i++)
+            {
+                array[i] = array[i + 1];
+            }
+        }
         
        
        public int Count
