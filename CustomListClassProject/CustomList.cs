@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomListClassProject
 {
-   public class CustomList <T>
+    public class CustomList<T>
 
     {
         //member variables
@@ -17,7 +17,7 @@ namespace CustomListClassProject
         public CustomList()
         {
             count = 0;
-            capacity = 20;
+            capacity = 5;
             array = new T[capacity];
         }
 
@@ -43,7 +43,7 @@ namespace CustomListClassProject
 
         public bool CheckIfCountIsLessThanCapacity()
         {
-            if (count > (capacity/2))
+            if (count > (capacity / 2))
             {
                 return false;
             }
@@ -51,16 +51,28 @@ namespace CustomListClassProject
             {
                 return true;
             }
-            
+
         }
 
         public void ExpandCapacity()
         {
-            if (CheckIfCountIsLessThanCapacity() == false)
-            {
+         if (CheckIfCountIsLessThanCapacity() == false){
                 capacity = capacity * 2;
+                T[] newArray = new T[capacity];
+                for (int i = 0; i < count; i++)
+                {
+                    newArray[i] = (array[i]);
+                }
+                array = newArray;
+
             }
-        }
+
+
+           
+           }
+
+
+    
 
         public T this[int i]
         {
@@ -71,11 +83,8 @@ namespace CustomListClassProject
         public void Add (T element)
         {
             ExpandCapacity();
-            
-                array[count] = element;
-                count++;
-              
-
+            array[count] = element;
+            count++;
         }
 
         public void Remove (T element)
