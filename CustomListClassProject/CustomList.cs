@@ -119,53 +119,32 @@ namespace CustomListClassProject
         }
 
 
-        //public int IndexOf(T element)
-        //{
-        //    int elementIndex;
-
-        //    CustomList<int> elementLocation = new CustomList<int>();
-        //    get {
-        //        if (CheckForElementInList(element) == true) {
-        //            for (int i = 0; i < count; i++)
-        //            {
-        //                if (EqualityComparer<T>.Default.Equals(array[i], element))
-        //                {
-        //                    elementLocation.Add(i);
-        //                }
-
-        //            }
-        //            elementIndex = elementLocation[0];
-        //            return elementIndex;
-        //        }
-        //        else
-        //        {
-        //            throw new Exception("The value is not in the list");
-        //        }
-        //    }
-
-        //}
-        public bool Remove (T element)
+        public int GetIndexOfFirstInstanceOfElement(T element)
         {
             int elementIndex;
+            CustomList<int> elementLocation = new CustomList<int>();
+            for (int i = 0; i < count; i++)
+            {
+                if (EqualityComparer<T>.Default.Equals(array[i], element))
+                {
+                    elementLocation.Add(i);
+                }
 
+            }
+            elementIndex = elementLocation[0];
+            return elementIndex;
+        }
+     
+        public bool Remove (T element)
+        {
             if (CheckForElementInList(element) == true)
             {
-                CustomList<int> elementLocation = new CustomList<int>();
-                for (int i = 0; i < count; i++)
-                {
-                    if (EqualityComparer<T>.Default.Equals(array[i], element))
-                    {
-                        elementLocation.Add(i);
-                    }
-
-                }
-                elementIndex = elementLocation[0];
-              
+                int elementIndex;
+                elementIndex = GetIndexOfFirstInstanceOfElement(element);
                 MoveElementsLeftInArray(elementIndex);
                 count--;
                 return true;
             }
-             
             else
             {
 

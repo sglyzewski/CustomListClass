@@ -159,6 +159,7 @@ namespace CustomListTests
             Assert.AreEqual(expected, result);
         }
 
+        [TestMethod]
         public void Remove_RemovingNonExistentElement_ReturnsFalse()
         {
             //arrange
@@ -170,6 +171,23 @@ namespace CustomListTests
             //assert
             Assert.IsFalse(result);
         }
+
+        [TestMethod]
+        public void Remove_RepeatElement_RemovesFirstInstanceOfElement()
+        {
+            //arrange
+            CustomList<string> customList = new CustomList<string>();
+            customList.Add("hello");
+            customList.Add("hi");
+            customList.Add("hello");
+            string expected = "hi";
+            //act
+           customList.Remove("hello");
+            string result = customList[0];
+           //assert
+           Assert.AreEqual(expected,result);
+        }
+
 
 
 
