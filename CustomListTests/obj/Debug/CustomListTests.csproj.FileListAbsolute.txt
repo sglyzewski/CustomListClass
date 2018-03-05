@@ -1,0 +1,16 @@
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\CustomListTests.dll
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\CustomListTests.pdb
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\CustomListClassProject.exe
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\CustomListClassProject.pdb
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\CustomListClassProject.exe.config
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\obj\Debug\CustomListTests.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\obj\Debug\CustomListTests.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\obj\Debug\CustomListTests.dll
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListTests\obj\Debug\CustomListTests.pdb

@@ -1,0 +1,7 @@
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListClassProject\bin\Debug\CustomListClassProject.exe.config
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListClassProject\bin\Debug\CustomListClassProject.exe
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListClassProject\bin\Debug\CustomListClassProject.pdb
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListClassProject\obj\Debug\CustomListClassProject.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListClassProject\obj\Debug\CustomListClassProject.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListClassProject\obj\Debug\CustomListClassProject.exe
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_29\CustomListClassProject\CustomListClassProject\obj\Debug\CustomListClassProject.pdb

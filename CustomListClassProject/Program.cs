@@ -10,6 +10,17 @@ namespace CustomListClassProject
     {
         static void Main(string[] args)
         {
+            CustomList<int> customList1 = new CustomList<int>();
+            customList1.Add(1);
+            CustomList<int> customList2 = new CustomList<int>();
+            customList2.Add(2);
+            customList2.Add(3);
+            CustomList<int> customList3 = (customList1 + customList2);
+            customList1.PrintArray();
+            customList2.PrintArray();
+
+            customList3.PrintArray();
+            Console.ReadLine();
         }
     }
 }
