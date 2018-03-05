@@ -19,11 +19,11 @@ namespace CustomListClassProject
             customList2.Add(5);
             customList2.Add(6);
             customList2.Add(7);
-            //CustomList<int> customList3 = (customList1 + customList2);
-            //customList1.PrintArray();
+            CustomList<int> customList3 = (customList1 + customList2);
+            customList1.PrintArray();
             customList2.PrintArray();
 
-            //customList3.PrintArray();
+            customList3.PrintArray();
             Console.ReadLine();
         }
     }

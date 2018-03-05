@@ -94,18 +94,7 @@ namespace CustomListClassProject
 
         
 
-        //public T[] Add(T element)
-        //{
-
-        //    CustomList<T> newCustomList = new CustomList<T>();
-        //    newCustomList.length = 1;
-        //    newCustomList.array = new []{element};
-            
-        //    array = array + newCustomList.array;
-        //    count++;
-        //    return array;
-
-        //}
+       
 
        
 
@@ -146,43 +135,22 @@ namespace CustomListClassProject
 
         
 
-        //public static CustomList<T> operator +(CustomList<T> array1, CustomList<T> array2)
-        //{
-        //    int x;
-        //    int y;
-
-        //    x = array1.array.Length;
-        //    y = array2.array.Length;
-        //    int length = x + y;
-        //    CustomList<T> newArray = new CustomList<T>();
-        //    newArray.length = length;
-        //    for (int i = 0; i < x; i++) 
-        //    {
-        //        newArray.array[i] = array1.array[i];
-        //    };
-        //    for(int j = x; j < length; j++)
-        //    {
-        //        newArray.array[j] = array2.array[j - x];
-        //    };
-        //    return newArray;
-        //}
-
 
 
         public static CustomList<T> operator + (CustomList<T> list1, CustomList<T> list2)
         {
             CustomList<T> newList = new CustomList<T>();
-            newList.capacity = list1.capacity + list2.capacity;
-            newList.count = list1.count + list2.count;
+            //newList.capacity = list1.capacity + list2.capacity;
+            //newList.count = list1.count + list2.count;
             
             for(int i = 0; i<list1.count; i++)
             {
-                newList[i] = list1[i];
+                newList.Add(list1[i]);
              
             }
             for (int i = 0; i < list2.count; i++)
             {
-                newList[i + list1.count] = list2[i];
+                newList.Add(list2[i]);
             }
             return newList;
         }
