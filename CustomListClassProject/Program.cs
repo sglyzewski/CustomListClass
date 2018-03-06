@@ -10,21 +10,21 @@ namespace CustomListClassProject
     {
         static void Main(string[] args)
         {
-            CustomList<int> customList1 = new CustomList<int>();
-            customList1.Add(1);
-            CustomList<int> customList2 = new CustomList<int>();
-            customList2.Add(2);
-            customList2.Add(6);
-            customList2.Add(4);
-            customList2.Add(5);
-            customList2.Add(6);
-            customList2.Add(7);
-            customList2.PrintArray();
-            CustomList<int> customList3 = (customList1 + customList2);
-            customList2.Remove(6);
-            customList2.Remove(6);
-            customList2.PrintArray();
-           
+            CustomList<int> odd = new CustomList<int>();
+            odd.Add(1);
+            odd.Add(3);
+            odd.Add(5);
+            CustomList<int> even = new CustomList<int>();
+            even.Add(2);
+            even.Add(4);
+            even.Add(6);
+            even.Add(8);
+            even.Add(10);
+
+            odd.Zipper(odd, even).PrintArray();
+            
+
+
             Console.ReadLine();
         }
     }

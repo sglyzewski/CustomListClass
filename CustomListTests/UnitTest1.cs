@@ -160,6 +160,24 @@ namespace CustomListTests
         }
 
         [TestMethod]
+        public void Count_RemoveElementFrom2ElementList_Return1()
+        {
+            //arrange
+            CustomList<string> customList = new CustomList<string>();
+            customList.Add("hello");
+            customList.Add("hi");
+            customList.Remove("hi");
+            int expected = 1;
+
+            //act
+            int result = customList.Count;
+
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
+
+        [TestMethod]
         public void Count_2ElementList_Return2()
         {
             //arrange
@@ -269,6 +287,7 @@ namespace CustomListTests
             //assert
             Assert.AreEqual(expected, result);
         }
+        
 
         [TestMethod]
         public void PlusOperatorOverLoad_AddEmptyCustomList_CountRemainsTheSame()
@@ -285,8 +304,139 @@ namespace CustomListTests
             Assert.AreEqual(customList3.Count, customList1.Count);
         }
 
+        //public void MinusOperatorOverLoad
+        [TestMethod]
+        public void MinusOperatorOverload_TwoFloatArrays_SubtractsEachElement()
+        {
+            //arrange
+            CustomList<float> customList1 = new CustomList<float>();
+            CustomList<float> customList2 = new CustomList<float>();
+            CustomList<float> customList3;
+            customList1.Add(2);
+            customList1.Add(3);
+            customList2.Add(1);
+            customList2.Add(2);
+            
+            int expected = 1;
+            //act
+            customList3 = customList1 - customList2;
+            float result = customList1[1];
+            //assert
+            Assert.AreEqual(expected, result);
+        }
 
-       
+        [TestMethod]
+        public void MinusOperatorOverload_TwoStringArrays_SubtractStrings()
+        {
+            //arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            CustomList<string> customList3;
+            customList1.Add("Hey,");
+            customList1.Add("it's");
+            customList1.Add("me.");
+            customList1.Add("How");
+            customList1.Add("are");
+            customList1.Add("you?");
+            customList2.Add("How");
+            customList2.Add("are");
+            customList2.Add("you?");
+            string expected = "me.";
+            //act
+            customList3 = customList1 - customList2;
+            string result = customList1[customList1.Count - 1];
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void MinusOperatorOverload_TwoIntegerArraysOfDifferentCounts_AddsZeroesToSubtract()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            CustomList<int> customList3;
+            customList1.Add(2);
+            customList1.Add(3);
+            customList2.Add(1);
+            customList2.Add(2);
+            customList2.Add(3);
+            int expected = -3;
+            //act
+            customList3 = customList1 - customList2;
+            int result = customList3[2];
+            //assert
+            Assert.AreEqual(expected, result);
+
+        }
+
+        [TestMethod]
+        public void Zip_TwoIntegerLists_ZipsValuesTogetherInCorrectOrder()
+        {
+            //arrange
+            CustomList<int> odd = new CustomList<int>();
+            odd.Add(1);
+            odd.Add(3);
+            odd.Add(5);
+            CustomList<int> even = new CustomList<int>();
+            even.Add(2);
+            even.Add(4);
+            even.Add(6);
+            int expected = 2;
+            //act
+            CustomList<int> zipped;
+            zipped = odd.Zipper(odd, even);
+            int result = zipped[1];
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Zip_TwoIntegerLists_CountChanges()
+        {
+            //arrange
+            CustomList<int> odd = new CustomList<int>();
+            odd.Add(1);
+            odd.Add(3);
+            odd.Add(5);
+            CustomList<int> even = new CustomList<int>();
+            even.Add(2);
+            even.Add(4);
+            even.Add(6);
+            int expected = 6;
+            //act
+            CustomList<int> zipped;
+            zipped = odd.Zipper(odd, even);
+            int result = zipped.Count;
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Zip_TwoIntegerListsOfDifferentLengths_CountChanges()
+        {
+            //arrange
+            CustomList<int> odd = new CustomList<int>();
+            odd.Add(1);
+            odd.Add(3);
+            odd.Add(5);
+            CustomList<int> even = new CustomList<int>();
+            even.Add(2);
+            even.Add(4);
+            even.Add(6);
+            even.Add(6);
+            even.Add(6);
+            int expected = 8;
+            //act
+            CustomList<int> zipped;
+            zipped = odd.Zipper(odd, even);
+            int result = zipped.Count;
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
+
+
 
 
 
