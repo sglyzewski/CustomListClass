@@ -166,30 +166,30 @@ namespace CustomListClassProject
             }
         }
 
-        public CustomList<T> Zipper(CustomList<T> list1, CustomList<T> list2)
+        public CustomList<T> Zipper(CustomList<T> list2)
         {
             CustomList<T> newList = new CustomList<T>();
-            if (list1.Count > list2.Count)
+            if (count > list2.Count)
             {
                 for (int i = 0; i < list2.Count; i++)
                 {
-                    newList.Add(list1[i]);
+                    newList.Add(array[i]);
                     newList.Add(list2[i]);
                 }
-                for (int i = list2.Count; i < list1.Count; i++)
+                for (int i = list2.Count; i < count; i++)
                 {
-                    newList.Add(list1[i]);
+                    newList.Add(array[i]);
                 }
             }
 
-            if (list1.Count < list2.Count)
+            if (count < list2.Count)
             {
-                for (int i = 0; i < list1.Count; i++)
+                for (int i = 0; i < count; i++)
                 {
-                    newList.Add(list1[i]);
+                    newList.Add(array[i]);
                     newList.Add(list2[i]);
                 }
-                for (int i = list1.Count; i < list2.Count; i++)
+                for (int i = count; i < list2.Count; i++)
                 {
                     newList.Add(list2[i]);
                 }
@@ -197,9 +197,9 @@ namespace CustomListClassProject
 
             else
             {
-                for (int i = 0; i < list1.Count; i++)
+                for (int i = 0; i < count; i++)
                 {
-                    newList.Add(list1[i]);
+                    newList.Add(array[i]);
                     newList.Add(list2[i]);
                 }
             }
