@@ -456,6 +456,35 @@ namespace CustomListTests
 
         }
 
+        [TestMethod]
+        public void ToString_CustomListOfTwoStrings_ReturnsAConcatenatedStringOfElements()
+        {
+            //arrange
+            CustomList<string> helloWorld = new CustomList<string>();
+            helloWorld.Add("Hello ");
+            helloWorld.Add("world!");
+            string expected = "Hello world!";
+            //act
+            string result = helloWorld.ToString();
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
+        
+        [TestMethod]
+        public void ToString_CustomListOfTwoDoubles_ReturnsAConcatenatedStringOfElements()
+        {
+            //arrange
+            CustomList<double> doublesList = new CustomList<double>();
+            doublesList.Add(2);
+            doublesList.Add(4);
+            string expected = "24";
+            //act
+            string result = doublesList.ToString();
+            //assert
+            Assert.AreEqual(expected, result);
+        }
+
 
 
 

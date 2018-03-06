@@ -349,7 +349,26 @@ namespace CustomListClassProject
             return list1;
         }
 
-       
+        
+        public override string ToString()
+        {
+
+            string returnString;
+            //CustomList<string> stringList = new CustomList<string>();
+            //for(int i = 0; i < count; i ++)
+            //{
+
+            //   stringList.Add(array[i].ToString());
+            //}
+            T[] newArray = new T[count];
+            for (int i = 0; i < count; i++)
+            {
+                newArray[i] = array[i];
+            }
+            returnString = string.Concat(newArray);
+            return returnString;
+        }
+
 
         public static CustomList<T> operator -(CustomList<T> list1, CustomList<T> list2)
         {

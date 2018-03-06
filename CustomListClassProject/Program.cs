@@ -21,8 +21,9 @@ namespace CustomListClassProject
             even.Add(8);
             even.Add(10);
 
-            odd.Zipper(even).PrintArray();
-       
+            odd.Zipper(even);
+            Console.WriteLine(odd.ToString());
+
             Console.ReadLine();
         }
     }
