@@ -354,50 +354,6 @@ namespace CustomListClassProject
             CustomList<T> newList = new CustomList<T>();
             newList = SubtractArrays(list1, list2);
             return newList;
-            //string type = (list1[0]).GetType().ToString();
-
-            //switch (type)
-            //{
-            //    case "Int32":
-            //        CustomList<int> intList1;
-            //        CustomList<int> intList2;
-
-            //        intList1 = ConvertTypeTToInt(list1);
-            //        intList2 =  ConvertTypeTToInt(list2);
-            //        CustomList<double> holdingList;
-            //        CustomList<double> doubleList1;
-            //        CustomList<double> doubleList2;
-            //        doubleList1 = ConvertArrayToDouble(intList1);
-            //        doubleList2= ConvertArrayToDouble(intList2);
-            //        holdingList = SubtractDoubleArrays(doubleList1, doubleList2);
-
-            //        foreach (double element in holdingList)
-            //        {
-            //            Convert.ChangeType(element, typeof(T));
-            //            newList.Add(element);
-            //        }
-            //        return newList;
-
-            //    //case Double:
-            //    //    CustomList<double> newList;
-            //    //    newList = SubtractFloatArrays(list1, list2);
-            //    //    return newList;
-
-            //    //case String:
-            //    //    CustomList<string> newList;
-            //    //    newList = SubtractStringArrays(list1, list2);
-            //    //    return newList;
-
-
-            //    default:
-
-            //        newList = SubtractArrays(list1, list2);
-            //        return newList;
-
-
-            //}
-
-
         }
 
         public CustomList<int> BubbleSort(CustomList<int> customList)

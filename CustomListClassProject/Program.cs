@@ -11,8 +11,7 @@ namespace CustomListClassProject
         static void Main(string[] args)
         {
             CustomList<int> odd = new CustomList<int>() { 1, 3, 5, 6, 10, 9, 10 };
-            CustomList<string> test = new CustomList<string>() {"hello"};
-            odd.BubbleSort(test);
+        
             
 
             odd.PrintArray();
