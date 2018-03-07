@@ -269,18 +269,7 @@ namespace CustomListClassProject
         static CustomList<T> SubtractArrays(CustomList<T> list1, CustomList<T> list2)
         {
             CustomList<T> newList = new CustomList<T>();
-            //if (list2.Count < list1.Count)
-            //{
-            //    int newListCount = list1.Count - list2.Count;
-            //    for (int i = 0; i < newListCount; i++)
-            //    {
-            //        newList.Add(list1[i]);
-
-
-            //    }
-
-            //}
-            //return newList;
+           
 
             for (int i = 0; i < list2.Count; i++)
             {
@@ -290,9 +279,6 @@ namespace CustomListClassProject
                 }
             }
             return list1;
-
-
-           
 
         }
 
@@ -352,14 +338,7 @@ namespace CustomListClassProject
         
         public override string ToString()
         {
-
             string returnString;
-            //CustomList<string> stringList = new CustomList<string>();
-            //for(int i = 0; i < count; i ++)
-            //{
-
-            //   stringList.Add(array[i].ToString());
-            //}
             T[] newArray = new T[count];
             for (int i = 0; i < count; i++)
             {
@@ -421,15 +400,25 @@ namespace CustomListClassProject
 
         }
 
-        //public override string ToString()
-        //{
-        //    //for(int i = 0; i < count; i++)
-        //    //{
-        //    //    return array[0] + "";
-        //    //}
-        //}
+        public CustomList<int> BubbleSort(CustomList<int> customList)
+        {
+            
+                for (int i = 0; i < customList.Count - 1; i++)
+                {
+                    for (int j = 0; j < customList.Count - 1 - i; j++)
+                    {
+                        if (customList[j] < customList[j + 1])
+                        {
+                            int number = customList[j];
+                            customList[j] = customList[j + 1];
+                            customList[j + 1] = number;
+                        }
+                    }
+                }
+            
+            return customList;
+        }
 
-        
 
 
 

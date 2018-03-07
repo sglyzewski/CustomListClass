@@ -10,20 +10,15 @@ namespace CustomListClassProject
     {
         static void Main(string[] args)
         {
-            CustomList<int> odd = new CustomList<int>();
-            odd.Add(1);
-            odd.Add(3);
-            odd.Add(5);
-            CustomList<int> even = new CustomList<int>();
-            even.Add(2);
-            even.Add(4);
-            even.Add(6);
-            even.Add(8);
-            even.Add(10);
+            CustomList<int> odd = new CustomList<int>() { 1, 3, 5, 6, 10, 9, 10 };
+            CustomList<string> test = new CustomList<string>() {"hello"};
+            odd.BubbleSort(test);
+            
 
-            odd.Zipper(even);
-            Console.WriteLine(odd.ToString());
+            odd.PrintArray();
+            
 
+            Console.WriteLine("count: " + odd.Count);
             Console.ReadLine();
         }
     }
