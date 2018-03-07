@@ -70,7 +70,7 @@ namespace CustomListClassProject
         public T this[int i]
         {
             get {
-                if (i > count - 1)
+                if (i >= count)
                 {
                     throw new IndexOutOfRangeException();
                 }
@@ -87,7 +87,6 @@ namespace CustomListClassProject
             ExpandCapacity();
             array[count] = element;
             count++;
-
         }
 
         public bool CheckForElementInList(T element)
@@ -131,6 +130,16 @@ namespace CustomListClassProject
             return elementIndex;
         }
 
+        public void MoveElementsLeftInArray(int elementIndex)
+        {
+
+            for (int i = elementIndex; i < count; i++)
+            {
+                array[i] = array[i + 1];
+            }
+        }
+
+
         public bool Remove(T element)
         {
             if (CheckForElementInList(element) == true)
@@ -147,16 +156,6 @@ namespace CustomListClassProject
                 return false;
             }
         }
-
-        public void MoveElementsLeftInArray(int elementIndex)
-        {
-
-            for (int i = elementIndex; i < count; i++)
-            {
-                array[i] = array[i + 1];
-            }
-        }
-
 
         public int Count
         {
