@@ -8,7 +8,7 @@ namespace CustomListTests
     public class UnitTest1
     {
 
-        //Tests for Add Method
+        
         [TestMethod]
         public void Add_InitialElementInArray_AddsElementToArray()
         {
@@ -102,28 +102,17 @@ namespace CustomListTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
         public void Indexer_RequestIndexHigherThanCount_ThrowsException()
         {
+            //arange
+            CustomList<string> customList = new CustomList<string>();
+            customList.Add("hello");
 
+            //act
+            string act = customList[1];
         }
 
-
-        //Remove Method Tests
-        //[TestMethod]
-        //public void Remove_SecondIntegerElementInList_DeletesSecondIntegerElementFromList()
-        //{
-        //    //arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    customList.Add(1);
-        //    customList.Add(2);
-        //    int expected = 0;
-        //    //act
-        //    customList.Remove(2);
-
-        //    int result = customList[1];
-        //    //assert
-        //    result.ThrowsException("The index has no value");
-        //}
 
         [TestMethod]
         public void Remove_FourthStringInList_CountDecrementsFrom4To3()
@@ -304,27 +293,6 @@ namespace CustomListTests
             Assert.AreEqual(customList3.Count, customList1.Count);
         }
 
-        //public void MinusOperatorOverLoad
-        [TestMethod]
-        public void MinusOperatorOverload_TwoFloatArrays_SubtractsEachElement()
-        {
-            //arrange
-            CustomList<float> customList1 = new CustomList<float>();
-            CustomList<float> customList2 = new CustomList<float>();
-            CustomList<float> customList3;
-            customList1.Add(2);
-            customList1.Add(3);
-            customList2.Add(1);
-            customList2.Add(2);
-            
-            int expected = 1;
-            //act
-            customList3 = customList1 - customList2;
-            float result = customList1[1];
-            //assert
-            Assert.AreEqual(expected, result);
-        }
-
         [TestMethod]
         public void MinusOperatorOverload_TwoStringArrays_SubtractStrings()
         {
@@ -348,26 +316,55 @@ namespace CustomListTests
             //assert
             Assert.AreEqual(expected, result);
         }
-
+         
+       
         [TestMethod]
-        public void MinusOperatorOverload_TwoIntegerArraysOfDifferentCounts_AddsZeroesToSubtract()
+  
+        public void MinusOperatorOverLoad_TwoIntegerArrays_RemovesElementsWhichOccurInBoth()
         {
             //arrange
-            CustomList<int> customList1 = new CustomList<int>();
-            CustomList<int> customList2 = new CustomList<int>();
+            CustomList<int> customList1 = new CustomList<int>() { 2, 3, 4 };
+            CustomList<int> customList2 = new CustomList<int>() { 3 };
             CustomList<int> customList3;
-            customList1.Add(2);
-            customList1.Add(3);
-            customList2.Add(1);
-            customList2.Add(2);
-            customList2.Add(3);
-            int expected = -3;
+            int expected = 4;
             //act
             customList3 = customList1 - customList2;
-            int result = customList3[2];
+            int result = customList3[1];
             //assert
-            Assert.AreEqual(expected, result);
+           Assert.AreEqual(expected, result);
 
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void MinusOperatorOverLoad_TwoIntegerListsWithSameValues_ThrowsExceptionWhenAskedForIndexOfList3()
+        {
+            //act
+            CustomList<int> customList1 = new CustomList<int>() { 2, 3, 4 };
+            CustomList<int> customList2 = new CustomList<int>() { 2, 3, 4 };
+            CustomList<int> customList3;
+            //assert
+            customList3 = customList1 - customList2;
+            int result = customList3[0];
+        }
+        
+
+        [TestMethod]
+        public void MinusOperatorOverLoad_TwoIntegerListsWithNoSharedValues_ReturnsList1AsList3()
+        {
+            //arrange
+            CustomList<int> customList1 = new CustomList<int>() { 2, 3, 4 };
+            CustomList<int> customList2 = new CustomList<int>() { 5, 6, 7};
+            CustomList<int> customList3;
+            int expectedCount = 3;
+            int expectedNumber = 4;
+            //act
+            customList3 = customList1 - customList2;
+            int resultCount = customList3.Count;
+            int resultNumber= customList3[2];
+            //assert
+            Assert.AreEqual(expectedCount, resultCount);
+            Assert.AreEqual(expectedNumber, resultNumber);
         }
 
         [TestMethod]
@@ -485,12 +482,43 @@ namespace CustomListTests
             Assert.AreEqual(expected, result);
         }
 
+        [TestMethod]
+        public void ToString_EmptyCustomList_ReturnsEmptyString()
+        {
+            //arrange
+            CustomList<int> emptyList = new CustomList<int>();
+            string expected = "";
+            //act
+            string result;
+            result = emptyList.ToString();
+            //assert
+            Assert.AreEqual(expected, result);
+        }
 
+        [TestMethod]
+        public void BubbleSort_LowerNumberFirst_ReturnsHigherNumberFirst()
+        {
+            //arrange
+            CustomList<int> unsortedList = new CustomList<int>() { 1, 2 };
+            int expected = 2;
+            //act
+            int result = (unsortedList.BubbleSort(unsortedList))[0];
+            //assert
+            Assert.AreEqual(expected, result);
+        }
 
+        [TestMethod]
+        public void BubbleSort_HigherNumberFirst_ReturnsHigherNumberFirst()
+        {
+            //arrange
+            CustomList<int> unsortedList = new CustomList<int>() { 2 , 1 };
+            int expected = 2;
+            //act
 
-
-
-
+            int result = (unsortedList.BubbleSort(unsortedList))[0];
+            //assert
+            Assert.AreEqual(expected, result);
+        }
 
     }
 
