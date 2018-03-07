@@ -22,6 +22,8 @@ namespace CustomListTests
             Assert.AreEqual(expected, result);
         }
 
+        
+
         [TestMethod]
         public void Add_FourthElementInArray_AddsElementToEndOfArray()
         {
@@ -368,7 +370,7 @@ namespace CustomListTests
         }
 
         [TestMethod]
-        public void Zip_TwoIntegerLists_ZipsValuesTogetherInCorrectOrder()
+        public void ZipCustomLists_TwoIntegerLists_ZipsValuesTogetherInCorrectOrder()
         {
             //arrange
             CustomList<int> odd = new CustomList<int>();
@@ -382,14 +384,14 @@ namespace CustomListTests
             int expected = 2;
             //act
             CustomList<int> zipped;
-            zipped = odd.Zipper(even);
+            zipped = odd.ZipCustomLists(even);
             int result = zipped[1];
             //assert
             Assert.AreEqual(expected, result);
         }
 
         [TestMethod]
-        public void Zip_TwoIntegerLists_CountChanges()
+        public void ZipCustomLists_TwoIntegerLists_CountChanges()
         {
             //arrange
             CustomList<int> odd = new CustomList<int>();
@@ -403,14 +405,14 @@ namespace CustomListTests
             int expected = 6;
             //act
             CustomList<int> zipped = new CustomList<int>();
-            zipped = odd.Zipper(even);
+            zipped = odd.ZipCustomLists(even);
             int result = zipped.Count;
             //assert
             Assert.AreEqual(expected, result);
         }
 
         [TestMethod]
-        public void Zip_TwoIntegerListsOfDifferentLengths_CountChanges()
+        public void ZipCustomLists_TwoIntegerListsOfDifferentLengths_CountChanges()
         {
             //arrange
             CustomList<int> odd = new CustomList<int>();
@@ -426,14 +428,14 @@ namespace CustomListTests
             int expected = 8;
             //act
             CustomList<int> zipped = new CustomList<int>();
-            zipped = odd.Zipper(even);
+            zipped = odd.ZipCustomLists(even);
             int result = zipped.Count;
             //assert
             Assert.AreEqual(expected, result);
         }
 
         [TestMethod]
-        public void Zip_List1IsEmpty_ReturnsSecondList()
+        public void ZipCustomLists_List1IsEmpty_ReturnsSecondList()
         {
             //arrange
             CustomList<int> first = new CustomList<int>();
@@ -446,11 +448,34 @@ namespace CustomListTests
             int expected = 6;
             //act
             CustomList<int> zipped = new CustomList<int>();
-            zipped = first.Zipper(second);
+            zipped = first.ZipCustomLists(second);
             int result = zipped[4];
             //assert
             Assert.AreEqual(expected, result);
 
+        }
+
+        [TestMethod]
+        public void ZipCustomLists_List2IsEmpty_ReturnsFirstList()
+        {
+            //arrange
+            CustomList<int> first = new CustomList<int>();
+            first.Add(2);
+            first.Add(4);
+            first.Add(6);
+            first.Add(6);
+            first.Add(6);
+            CustomList<int> second = new CustomList<int>();
+            int expected = 6;
+            int expectedCount = 5;
+            //act
+            CustomList<int> zipped = new CustomList<int>();
+            zipped = first.ZipCustomLists(second);
+            int resultCount = zipped.Count;
+            int result = zipped[4];
+            //assert
+            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expectedCount, resultCount);
         }
 
         [TestMethod]

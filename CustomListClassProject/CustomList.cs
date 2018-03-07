@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CustomListClassProject
 {
@@ -100,7 +97,6 @@ namespace CustomListClassProject
                     elementCount++;
                 }
             }
-
             if (elementCount > 0)
             {
                 return true;
@@ -165,7 +161,7 @@ namespace CustomListClassProject
             }
         }
 
-        public CustomList<T> Zipper(CustomList<T> list2)
+        public CustomList<T> ZipCustomLists(CustomList<T> list2)
         {
             CustomList<T> newList = new CustomList<T>();
             if (count > list2.Count)
@@ -181,7 +177,7 @@ namespace CustomListClassProject
                 }
             }
 
-            if (count < list2.Count)
+            else if (count < list2.Count)
             {
                 for (int i = 0; i < count; i++)
                 {
