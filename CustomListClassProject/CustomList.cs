@@ -70,9 +70,9 @@ namespace CustomListClassProject
         public T this[int i]
         {
             get {
-                if (i > count)
+                if (i > count - 1)
                 {
-                    throw new Exception("The index has no value");
+                    throw new IndexOutOfRangeException();
                 }
                 else
                 {
